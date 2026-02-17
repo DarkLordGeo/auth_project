@@ -7,12 +7,17 @@ import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormControl from '@mui/material/FormControl';
-import Link from '@mui/material/Link';
+// import Link from '@mui/material/Link';
 import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import MuiCard from '@mui/material/Card';
 import { styled } from '@mui/material/styles';
+import { Link } from 'react-router';
+
+import InputLabel from '@mui/material/InputLabel';
+import Select from '@mui/material/Select';
+import MenuItem from '@mui/material/MenuItem';
 // import AppTheme from './theme/AppTheme';
 // import ColorModeSelect from './theme/ColorModeSelect';
 // import { GoogleIcon, FacebookIcon, SitemarkIcon } from './components/CustomIcons';
@@ -36,28 +41,7 @@ const Card = styled(MuiCard)(({ theme }) => ({
     }),
 }));
 
-const SignUpContainer = styled(Stack)(({ theme }) => ({
-    height: 'calc((1 - var(--template-frame-height, 0)) * 100dvh)',
-    minHeight: '100%',
-    padding: theme.spacing(2),
-    [theme.breakpoints.up('sm')]: {
-        padding: theme.spacing(4),
-    },
-    '&::before': {
-        content: '""',
-        display: 'block',
-        position: 'absolute',
-        zIndex: -1,
-        inset: 0,
-        backgroundImage:
-            'radial-gradient(ellipse at 50% 50%, hsl(210, 100%, 97%), hsl(0, 0%, 100%))',
-        backgroundRepeat: 'no-repeat',
-        ...theme.applyStyles('dark', {
-            backgroundImage:
-                'radial-gradient(at 50% 50%, hsla(210, 100%, 16%, 0.5), hsl(220, 30%, 5%))',
-        }),
-    },
-}));
+
 
 export default function SignUpComponent(props: { disableCustomTheme?: boolean }) {
     const [emailError, setEmailError] = React.useState(false);
@@ -120,21 +104,45 @@ export default function SignUpComponent(props: { disableCustomTheme?: boolean })
 
     return (
         <>
-            <CssBaseline enableColorScheme />
-            <SignUpContainer direction="column" justifyContent="space-between">
+            <div style={{marginTop:'50px'}}>
                 <Card variant="outlined">
                     <Typography
                         component="h1"
                         variant="h4"
-                        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)' }}
+                        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', textAlign: 'center' }}
                     >
                         Sign up
+                    </Typography>
+                    <Typography
+                        component="h1"
+                        variant="h4"
+                        sx={{ width: '100%', fontSize: 'clamp(2rem, 10vw, 2.15rem)', textAlign: 'center', typography: { fontSize: '15px' } }}
+                    >
+                        {/* <Box sx={{marginRight:'30px', width:'auto' }} > */}
+                        <span>Or</span>
+                        {/* </Box> */}
+                        <Link to={'/register'} style={{ marginLeft: '2px' }}>create a new account</Link>
+
                     </Typography>
                     <Box
                         component="form"
                         onSubmit={handleSubmit}
                         sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}
                     >
+                        <FormControl fullWidth>
+                            <InputLabel id="demo-simple-select-label">Select role</InputLabel>
+                            <Select
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                            // value={age}
+                            // label="Age"
+                            // onChange={handleChange}
+                            >
+                                <MenuItem value={10}>admin</MenuItem>
+                                <MenuItem value={20}>user</MenuItem>
+                                <MenuItem value={30}>courier</MenuItem>
+                            </Select>
+                        </FormControl>
                         <FormControl>
                             <FormLabel htmlFor="name">Full name</FormLabel>
                             <TextField
@@ -190,7 +198,8 @@ export default function SignUpComponent(props: { disableCustomTheme?: boolean })
                         </Button>
                     </Box>
                 </Card>
-            </SignUpContainer>
+            </div>
+
         </>
 
     );
