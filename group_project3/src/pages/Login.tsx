@@ -9,6 +9,16 @@ import Box from '@mui/material/Box';
 
 import Container from '@mui/material/Container'
 
+// import SignUp from ''
+
+
+
+import SignUpComponent from   '../components/SignUpComponent.tsx'
+ 
+
+
+
+
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: '#fff',
     ...theme.typography.body2,
@@ -29,10 +39,13 @@ const Login: React.FC = () => {
                 justifyContent="center"
                 alignItems="center"
                 minHeight="100vh">
- 
-                <Container maxWidth="sm" sx={'400'}>
-                    <Box sx={{ bgcolor: '#cfe8fc', height: '100vh' }} />
-                </Container>
+
+
+                    <SignUpComponent />
+    
+                {/* <Container maxWidth='sm' sx={{ height: '400px', width:'400px', bgcolor:'red', padding:'32px 40px' }}>
+                   
+                </Container> */}
                 {/* <Grid size={2}>
                     <Item>2</Item>
                 </Grid> */}
