@@ -279,30 +279,9 @@ export default function RegisterComponent(props: { disableCustomTheme?: boolean 
                                     />
                                 </FormControl>
                                 <Box sx={{ marginTop: '15px', display: 'flex', justifyContent: "space-evenly", textAlign: 'center' }}>
-                                    <Typography sx={{textAlign:'center'}}>Working schedule (max 5) </Typography>
+                                    <Typography sx={{ textAlign: 'center' }}>Working schedule (max 5) </Typography>
                                     <Button variant='contained' color='secondary'>Add days +</Button>
                                 </Box>
-                                {/* <Box sx={{ marginTop: '15px', display: "flex" }}>
-                                    <Box>
-                                        <FormControl variant="filled" sx={{ m: 1, minWidth: 120 }}>
-                                            <InputLabel id="demo-simple-select-filled-label">Age</InputLabel>
-                                            <Select
-                                                labelId="demo-simple-select-filled-label"
-                                                id="demo-simple-select-filled"
-                                            // value={age}
-                                            // onChange={handleChange}
-                                            >
-                                                <MenuItem value="">
-                                                    <em>None</em>
-                                                </MenuItem>
-                                                <MenuItem value={10}>Ten</MenuItem>
-                                                <MenuItem value={20}>Twenty</MenuItem>
-                                                <MenuItem value={30}>Thirty</MenuItem>
-                                            </Select>
-                                        </FormControl>
-                                    </Box>
-                                </Box> */}
-
                             </div>
 
                         }

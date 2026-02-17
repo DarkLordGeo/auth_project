@@ -18,7 +18,7 @@ const Router: React.FC<MainRouteProps> = ({ route }) => {
         <Routes>
             {/* {route.map((route) => ( */}
             <Route path={'/login'} element={<Login />} />
-            <Route path={'/register'} element={<Register />} />
+            <Route path={'/register'} element={<Register />} /> 
             <Route path={'/'} element={<Main />} />
 
             {/* ))} */}
